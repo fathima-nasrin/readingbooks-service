@@ -84,7 +84,6 @@ class TestReadingListApp(unittest.TestCase):
         self.assertEqual(data['status'], updated_status)
 
     def tearDown(self):
-        # Clean up by deleting the test books
         for book in self.books:
             response = self.app.delete(f"/reading-list/books/{book['id']}")
             self.assertEqual(response.status_code, 204)
